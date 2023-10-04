@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     
     @IBOutlet weak var hasil: UILabel!
-    var workings:String = ""
+    var labelPerhitungan:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,15 +19,15 @@ class ViewController: UIViewController {
     }
 
     func clearAll(){
-        workings = ""
+        labelPerhitungan = ""
         hasil.text = "0"
         hasil.text = "0"
     }
     
     
     func isiHasil(value:String){
-            workings = workings + value
-            hasil.text = workings
+            labelPerhitungan = labelPerhitungan + value
+            hasil.text = labelPerhitungan
         
     }
     
@@ -36,9 +36,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func C(_ sender: Any) {
-        if(!workings.isEmpty){
-           workings.removeLast()
-           hasil.text = workings
+        if(!labelPerhitungan.isEmpty){
+           labelPerhitungan.removeLast()
+           hasil.text = labelPerhitungan
        }
     }
     
@@ -63,32 +63,28 @@ class ViewController: UIViewController {
     }
     
     @IBAction func samadengan(_ sender: Any) {
-        if workings.contains(",") {
-            workings = workings.replacingOccurrences(of: ",", with: ".")
+        if labelPerhitungan.contains(",") {
+            labelPerhitungan = labelPerhitungan.replacingOccurrences(of: ",", with: ".")
 
         }
-        var numArr = workings.components(separatedBy: " ")
-        print(numArr)
+        var numArr = labelPerhitungan.components(separatedBy: " ")
         for (index, element) in numArr.enumerated() {
             if(element != "-" && element != "+" && element != "*" && element != "/" && element != "*0.01" && element != "=" && element != "") && !element.contains(".") {
                     numArr[index] += ".0"
             }
         }
-        var itung = numArr.joined(separator: " ")
-
-        print(itung)
-
+        let itung = numArr.joined(separator: " ")
         let expression = NSExpression(format: itung)
         let hasilAkhir = expression.expressionValue(with: nil, context: nil) as! Double
-        var numArrHasil = String(hasilAkhir).components(separatedBy: ".")
-        print(numArrHasil)
+        let numArrHasil = String(hasilAkhir).components(separatedBy: ".")
+
         if numArrHasil[1] == "0"{
             hasil.text = numArrHasil[0]
-            workings = numArrHasil[0]
+            labelPerhitungan = numArrHasil[0]
         }
         else{
             hasil.text = String(hasilAkhir)
-            workings = String(hasilAkhir)
+            labelPerhitungan = String(hasilAkhir)
         }
     
     }
@@ -137,7 +133,6 @@ class ViewController: UIViewController {
     @IBAction func koma(_ sender: Any) {
         isiHasil(value: ",")
     }
-    
     
     
 }
