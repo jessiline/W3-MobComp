@@ -21,17 +21,16 @@ class ViewController: UIViewController {
     func clearAll(){
         workings = ""
         hasil.text = "0"
-        perhitungan.text = "0"
+        hasil.text = "0"
     }
     
     
     func isiHasil(value:String){
             workings = workings + value
-            perhitungan.text = workings
+            hasil.text = workings
         
     }
     
-    @IBOutlet weak var perhitungan: UILabel!
     @IBAction func clear(_ sender: Any) {
         clearAll()
     }
@@ -39,7 +38,7 @@ class ViewController: UIViewController {
     @IBAction func C(_ sender: Any) {
         if(!workings.isEmpty){
            workings.removeLast()
-           perhitungan.text = workings
+           hasil.text = workings
        }
     }
     
@@ -85,9 +84,11 @@ class ViewController: UIViewController {
         print(numArrHasil)
         if numArrHasil[1] == "0"{
             hasil.text = numArrHasil[0]
+            workings = numArrHasil[0]
         }
         else{
             hasil.text = String(hasilAkhir)
+            workings = String(hasilAkhir)
         }
     
     }
