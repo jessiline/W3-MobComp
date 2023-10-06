@@ -1,15 +1,15 @@
-# Kalkulator Sederhana
+# Simple Calculator
 
-Ini adalah sebuah aplikasi kalkulator sederhana yang mudah digunakan dan dapat membantu Anda melakukan perhitungan matematika dasar. Aplikasi ini dibuat dengan bahasa pemrograman swift
+This is a simple calculator application that is easy to use and can assist you in performing basic mathematical calculations. This application is created using the Swift programming language.
 
-## Fitur Utama
+## Features:
 
-- Penjumlahan
-- Pengurangan
-- Perkalian
-- Pembagian
+- Addition
+- Subtraction
+- Multiplication
+- Division
 - Clear & Clear All
-- Persen
+- Percentage
 
   ## Preview:
 <img width="400" alt="Screenshot 2023-10-06 at 19 48 26" src="https://github.com/jessiline/W3-MobComp/assets/95264872/2a815fd6-2692-440e-aed0-c222dbfd0d65">
